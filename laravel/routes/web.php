@@ -35,3 +35,19 @@ Route::get('/rotacomregras/{nome}/{n}', function($nome, $n){
 		echo "Olá, seja bem vindo(a), $nome!.<br>";
 })->where('nome', '[A-Za-z]+')
 ->where('n', '[0-9a-b]+');
+
+
+Route::prefix('/app')->group(function(){
+
+	Route::get('/', function(){
+		return view('app');				
+	});
+
+	Route::get('/user', function(){
+		return view('user');
+	});
+
+	Route::get('/profile', function(){
+		return view('profile');
+	});
+});
